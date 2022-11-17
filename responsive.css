@@ -1,0 +1,179 @@
+/*PC 1024px -> dùng đơn vị em để k bị lỗi trên nhiều browser khác nhau*/
+@media (min-width: 64em) {
+
+}
+
+/* Tablet & Mobile 1023px*/
+@media (max-width: 63.9375em) {
+    .tabmob-ptb-4 {
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+    }
+
+    .tabmob-p-8 {
+        padding: 8px;
+    }
+
+    .tabmob-p-16 {
+        padding: 16px;
+    }
+
+    .tabmob-ptb-16 {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .contact-form .tabmob-ptb-16 {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .tabmob-pt-16 {
+        padding-top: 16px;
+    }
+
+    .tabmob-pb-16 {
+        padding-bottom: 16px;
+    }
+
+    .tabmob-inlbl {
+        display: inline-block;
+    }
+
+    .tabmob-lh-2 {
+        line-height: 2;
+    }
+}
+
+/*Tablet 740px - 1023px*/
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+
+}
+
+/*Mobile*/
+@media (max-width: 46.1875em) {
+    #header {
+        overflow: hidden;
+    }
+    
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+    #header .search-button {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 42px !important;
+    }
+
+    .col-third {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .col-half {
+        width: 100%;
+    }
+
+    .mob-width100 {
+        width: 100%;
+    }
+
+    /* reuse */
+    .mob-mt-8 {
+        margin-top: 8px !important;
+    }
+    
+    .mob-mb-8 {
+        margin-bottom: 8px;
+    }
+    
+    .mob-mt-16 {
+        margin-top: 16px !important;
+    }
+    
+    .mob-mb-16 {
+        margin-bottom: 16px !important;
+    }
+    
+    .mob-ml-16 {
+        margin-left: 16px;
+    }
+    
+    .mob-mr-16 {
+        margin-right: 16px !important;
+    }
+    
+    .mob-nml-16 {
+        margin-left: -16px;
+    }
+    
+    .mob-nmr-16 {
+        margin-right: -16px;
+    }
+    
+    .mob-mb-32 {
+        margin-bottom: 32px;
+    }
+    
+    .mob-p-8 {
+        padding: 8px !important;
+    }
+    
+    .mob-p-16 {
+        padding: 16px;
+    }
+    
+    .mob-p-32 {
+        padding: 32px;
+    } 
+
+    .mob-pt-16 {
+        padding-top: 16px !important;
+    }
+    
+    .mob-pb-16 {
+        padding-bottom: 16px !important;
+    }
+    
+    .mob-pl-16 {
+        padding-left: 16px;
+    }
+    
+    .mob-pr-16 {
+        padding-right: 16px;
+    }
+    
+    .mob-pt-32 {
+        padding-top: 32px;
+    }
+    
+    .mob-pb-32 {
+        padding-bottom: 32px;
+    }
+}

@@ -1,0 +1,678 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+/* Xác định
+1. Vị trí
+2. Kích thước
+3. Màu sắc
+4. Kiểu dáng
+làm:
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+--> Tổng quan đến chi tiết 
+*/
+
+/* bôi đen -> command D cho đến khi chọn hết -> sang phải 
+-> Option + Shifr + sang phải -> Copy -> sang CCS paste
+-> để chuột ở id đầu -> Option + ấn chuột từng đầu id còn lại
+-> ấn . -> sang phải, mở đóng ngoặc, cách ra 1 thể luôn  */
+
+/* các li Home Band Tour phải dùng thẻ a vì mấy thẻ này yêu cầu phải bấm vào đc*/
+
+/*____________SHARE______________*/
+
+.text-white {
+    color: #fff ;
+}
+
+.text-center {
+    text-align: center ;
+}
+
+.clear {  /*cách 2 để fix FLOAT: LEFT*/
+    clear: both;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+/* những div dùng row trong web này là những div có 
+khoảng cách lùi lề giống nhau, cần margin âm như trên */
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* dùng element giả (Pseudo element), là thẻ giả nhưng thay
+thế 1 thẻ div thật
+after là đặt ở cuối, before là đặt trước */
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+  /*Khi một thành phần được CSS float là left hoặc right 
+    thì tất cả các thẻ CÙNG CẤP phía sau nó sẽ 
+    được tràn lên phía trên và lấp đầy chỗ trống 
+    của hàng chứa thẻ được CSS float left hoặc right.
+    Phải fix bằng Clear hoặc overflow: hidden */
+    
+.col-third {
+    width: 33.33333%;
+    margin-bottom: 16px;
+}
+/* hoặc width: calc(100% / 3); */
+
+.col-half {
+    width: 50%;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.mt-8 {
+    margin-top: 8px ;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mt-16 {
+    margin-top: 16px ;
+}
+
+.mb-16 {
+    margin-bottom: 16px ;
+}
+
+.ml-16 {
+    margin-left: 16px;
+}
+
+.mr-16 {
+    margin-right: 16px ;
+}
+
+.nml-16 {
+    margin-left: -16px;
+}
+
+.nmr-16 {
+    margin-right: -16px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.p-8 {
+    padding: 8px ;
+}
+
+.p-16 {
+    padding: 16px;
+}
+
+.pt-16 {
+    padding-top: 16px ;
+}
+
+.pb-16 {
+    padding-bottom: 16px ;
+}
+
+.pl-16 {
+    padding-left: 16px;
+}
+
+.pr-16 {
+    padding-right: 16px;
+}
+
+.pt-32 {
+    padding-top: 32px;
+}
+
+.pb-32 {
+    padding-bottom: 32px;
+}
+
+.border-1 {
+    border: 1px solid #ccc ;
+}
+
+.btn {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 10px 16px;
+    display: inline-block;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #ccc;
+    color: #000;
+}
+
+.pull-right {
+    float: right ;
+}
+
+.dark-cyan {
+    background-color: #009688;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.cl-white {
+    color: #fff;
+}
+
+.width100 {
+    width: 100% ;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+.fontsize-15 {
+    font-size: 15px;
+}
+
+.fontsize-30 {
+    font-size: 30px;
+}
+
+.block {
+    display: block;
+}
+
+.text-blue {
+    color: #2196F3!important;;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.filter50 {
+    filter: grayscale(60%);
+}
+
+.opa07 {
+    opacity: 0.7;
+}
+
+.opa07:hover {
+    opacity: 1;
+}
+
+/*_______________begin HEADER__________________*/
+#header {
+    height: 46.5px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    /*z-index: chiều sâu, trục chiều sâu z
+    --> thử 1 mà header chưa nổi lên thì
+    lại tăng đơn vị lên*/
+}
+
+#nav {
+    display: inline-block;
+    /*inline-block là để thẻ div nav ko chiếm hết chiều ngang,
+    mà chỉ chiếm đến hết nội dung - đến More là đc
+    --> để dành chỗ còn lại cho thẻ div chứa icon Search*/
+}
+
+#nav, .subnav {
+    list-style-type: none;
+    /* để bỏ dấu chấm mặc định của thẻ li */
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav > li > a {
+    color: #ffff;
+    text-transform: uppercase;
+/* mũi tên là hướng đến thẻ con trực tiếp,
+làm vậy để nó ko ăn vào thẻ a con của MORE */
+}
+
+#nav li a {
+    text-decoration: none;
+    line-height: 46.5px;
+    padding: 0 24px;
+    display: block;
+    /* block để responsive mobile còn ấn vào cả thanh ngang được
+    cứ có inline thì sẽ ko đc (chỉ ấn đúng phần chữ ms đc thôi */
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    background-color: #ffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    top: 100%;
+    left: 0;
+    /* mặc dù position absolute là căn chuẩn theo parent rồi 
+    nhưng TOP, LEFT vậy cho đảm bảo an toàn ở cả
+    những browser khác nữa (vì browser khác có thể
+    có mặc định default khác*/
+}
+
+#nav .subnav a {
+    color: #000;
+    display: block;
+    padding: 0 16px;
+    line-height: 38.5px;
+    /*ng tắc tke: dùng các số chia hết cho 4 */
+}
+
+#nav .nav-arrow-down {
+    font-size: 12px;
+}
+
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
+#header .search-button {
+    float: right;
+    padding: 0 21px;
+    cursor: pointer;
+    /*thêm vào chỗ hover ở dưới này cũng đc*/
+}
+
+#header .search-button:hover {
+    background-color: #f44336;
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .mobile-menu-icon {
+    color: #000;
+    /* phải làm hover đổi màu thẳng vào menu-icon vì
+    đang viết nó ở sau --> nó đc ưu tiên */
+}
+
+#header .mobile-menu-icon,
+#header .search-icon {
+    color: #ffff;
+    font-size: 16px;
+    line-height: 46.5px;
+}
+/*_________________end HEADER_________________*/
+
+
+/*________________begin SLIDER________________*/
+#slider {
+    margin-top: 46.5px;
+    padding-top: 50%;
+    /*padding-top 50% để làm cho chiều cao luôn
+    bằng 50% chiều ngang --> đáp ứng điều kiện
+    ảnh tỉ lệ 1200:600*/
+    background: url('../css/img/slider/slider1.jpeg') top center / cover no-repeat;
+    /*kỹ thuật nâng cao: dùng background (background image - background url)
+    thay cho dùng img, vì trong thực tế 3 ảnh có thể ko cùng tỷ lệ 1200:600
+    --> ảnh có thể nhấp nhô vì khác size nếu dùng img*/
+    position: relative;
+}
+
+#slider .text-content {
+    position: absolute;
+    color: #ffff;
+    bottom: 47px;
+    /*có nhiều cách để căn giữa:
+    width = 100% hoặc
+    left =0 right =0 hoặc cách bên dưới*/
+    left: 50%;
+    transform: translateX(-50%);
+    /*học cách bên trên để sau còn linh hoạt*/
+    text-align: center;
+}
+
+#slider .text-heading {
+    /*font-weight: chỉnh độ dày mỏng chữ*/
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-desciption {
+    font-size: 15px;
+    margin-top: 25px;
+    text-shadow: 0 0 4px #000;
+}
+/*______________end SLIDER________________*/
+
+
+
+/*_______________BEGIN CONTENT_______________*/
+
+/*Band section*/
+
+#content .content-section {
+    max-width: 800px;
+    padding: 64px 16px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#content .section-heading,
+#content .section-sub-heading {
+    text-align: center;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.6;
+    /* giá trị OPACITY (ōˈpasədē) độ mờ đục là từ 0-1 */
+}
+
+#content .about-text {
+    font-size: 15px;
+    text-align: justify;
+    /* text-align JUSTIFY (ˈjəstəˌfī) để căn đều 2 bên
+    giống format làm asm ở trường */
+    line-height: 1.5;
+}
+
+#content .member-list {
+    margin-top: 48px;
+    overflow: hidden;
+    /*OVERFLOW: HIDDEN này là 1 cách để fix vấn đề 
+    mà float: left ở member-item (ở dưới - trong) tạo ra;
+    cách 2 là dùng CLEAR: BOTH*/
+}
+
+#content .member-name {
+    font-size: 15px;
+    text-align: center;
+}
+
+#content .member-avatar {
+    width: 64%;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/*Tour section*/
+.tour-section {
+    background-color: #000;
+}
+
+/*Tour - ticket section*/
+.ticket-list {
+    background-color: #fff;
+    margin-top: 40px;
+    list-style: none;
+    /* List-style: none -> 
+    bỏ dấu chấm default (dəˈfôlt) thẻ li */
+}
+
+.ticket-list li {
+    color: #757575;
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.ticket-list .sold-out {
+    color: #fff;
+    background-color: #f44336;
+    padding: 3px 8px;
+    margin-left: 16px;
+}
+
+.ticket-list .ticket-left {
+    float: right;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    width: 24.7px;
+    height: 22.5px;
+    text-align: center;
+    line-height: 22.5px;
+    margin-top: -2px;
+    /* nhờ có FLOAT mới dùng được MARGIN ÂM và WIDTH, HEIGHT */
+}
+
+/*Tour - place section*/
+.place-list {
+    margin-top: 32px;
+    padding-bottom: 32px;
+}
+
+.place-img {
+    width: 100%;
+    display: block; /*vì thẻ img có thuộc tính Inline
+    --> nó sẽ bị có 1 đoạn cách với thẻ có thuộc tính block 
+    ở dưới --> display: block cho thẻ img để xoá đoạn cách*/
+}
+
+.place-img:hover {
+    opacity: 0.6;
+}
+
+.place-content {
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.place-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: -1px;
+    margin-bottom: 18px;
+}
+
+.place-time {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    opacity: 0.6;
+}
+
+.place-desc {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+
+
+/*Contact*/
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+/* sao bằng *="ti-" là trong class có chứa ti- ;
+phải display: inline-block nó mới ăn width vì đây là thẻ p
+chứ kphai thẻ div */
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    width: 100%;
+}
+
+.map-section img {
+    width: 100%;
+}
+
+/*_______________END CONTENT__________________*/
+
+/*________________BEGIN FOOTER________________*/
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list {
+    font-size: 23px;
+}
+
+#footer .social-list a {
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+}
+
+#footer .social-list a:hover,
+#footer .copyright a:hover {
+    color: rgba(0,0,0,0.4);
+}
+
+#footer .copyright {
+    margin-top: 15px;
+    color: rgba(0,0,0,0.6);
+}
+
+#footer .copyright a {
+    color: rgba(0,0,0,0.6);
+}
+/*________________END FOOTER__________________*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    /*align-items: center -> nằm giữa chiều cao thẻ cha*/
+    justify-content: center;
+    /*nằm giữa chiều rộng*/
+    display: none;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-container {
+    background: #fff;
+    width: 900px;
+    min-height: 200px;
+    position: relative;
+    max-width: calc(100% - 23px);
+
+    animation: Truotxuong ease 1s;
+     /* ease là kiểu trượt, 1s là tgian trượt mình chọn */
+}
+
+.modal-header {
+    background: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.modal-close {
+    color: #fff;
+    position: absolute; /* REMEMBER this shit */
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+#Buy-tickets:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    color: darkgreen;
+    background-color: lightsalmon;
+    font-weight: 900;
+}
+
+/* Java Scrips 
+- viết cả animation trên phần modal.containeer nữa 
+- Keyframes là chuyển động liên tiếp các hình ảnh tĩnh
+giống cơ chế chiếu phim 24 hình trên s */
+
+@keyframes Truotxuong {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
